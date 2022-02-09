@@ -1,0 +1,200 @@
+body{
+    /* font-family: 'Dongle', sans-serif; */
+        font-family: 'Poppins', sans-serif;
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        
+    }
+    button{
+        font-family: 'Poppins', sans-serif;
+    }
+    header{
+        /* move box in one line */
+        display: flex;   
+        /* background-color: aqua; */
+       /* width and margin sets the header in between taking only 90 %of width  
+       but 90 %will set the header such that it starts from left emd vut leaves  
+       10 % width at right ,to make it equal we use margin*/
+        width: 90%;
+        margin: auto;
+        height: 20vh;
+        align-items: center;
+
+    }
+  
+    .logo-container{
+        /* background-color: blueviolet; */
+        flex: 1; 
+        /* flex 1 stretch the container and gonna take all max space 
+        To give equal space just add flex 1 to all container*/
+
+    }
+    nav{
+        /* background-color: rgb(175, 89, 33); */
+        flex:3;
+
+    }
+    .cart{
+        /* background-color: rgb(37, 170, 32); */
+        flex: 1;
+        /* to make it stretched at end we use */
+        justify-content: flex-end;
+    }
+    /* ye specific containers inside header ko target karega aur elements ko ek line me kar dega */
+    .logo-container,.navlinks,.cart{
+        display: flex;
+    }
+    .logo{
+        margin-left: 10px;
+        font-weight: 500;
+    }
+    .navlinks{
+        /* gives space between items inside  its boxes */
+       justify-content: space-around;
+      list-style: none;
+      /* text-decoration: none;  using it here at containe level will not give any output
+      we must use it at element classes */
+    }
+    .navlink{
+        text-decoration: none;
+        color: rgb(81, 121, 161);
+        font-size: 19px;
+        font-weight: 800;
+    }
+
+    /* header section completed */
+
+    .presentation{
+        display:flex ;
+    width: 90%;
+    /* background: rgb(231, 160, 160); */
+    margin: auto;
+    min-height: 60vh;
+    align-items: center;
+       
+    }
+    .introduction{
+        /* background-color: aquamarine; */
+        flex: 1;
+    }
+    .intro-text h1{
+        font-size: 30px;
+        font-weight: 800;
+        /* to add a linear gradient in a text we have to add it in its bg 
+        and then using webkit and all set it to text */
+        background: linear-gradient(to right,#850909,#164622);
+      
+        -webkit-background-clip: text;
+        -webkit-text-fill-color:transparent;
+
+    }
+    .intro-text p{
+        font-size: 20px;
+        font-weight: bolder;
+        /* to add a linear gradient in a text we have to add it in its bg 
+        and then using webkit and all set it to text */
+        background: linear-gradient(to right,#494964,#686e2b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color:transparent;
+
+    }
+    .cta{
+        margin-top: 50px;
+    }
+    .first-button{
+     border: 3px solid green;
+     background:transparent;
+     color: green;
+     font-size: 20px;
+     width: 150px;
+     height: 50px;
+     cursor: pointer;
+     font-weight: bolder4;
+    }
+    .second-button{
+   
+    border: 3px solid green;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    /* here we've set button size by wudth and Height and button text size by font-size */
+    width: 150px;
+     height: 50px;
+     cursor: pointer;
+     
+     /* here we dont use padding aswe want space at margin level ,between two buttons */
+   margin: 0 0 0 30px;
+    }
+     
+    /* we must select img inside the container to give height else only the container height 
+    will increase */
+    .cover{
+        display: flex;
+        flex: 1;
+        height: 60vh;
+        justify-content: center;
+    }
+     .cover img{
+       height: 100%;
+    /*  to add a shadow to your image */
+    filter: drop-shadow(10px 8px 12px rgb(41, 41, 59));
+    animation: drop 1.5s ease  ;
+    
+    }
+   .big-circle{
+       height: 100%;
+       position: absolute;
+       top: 0%;
+       right: 0px;
+       /* it put the image behind the text and other elements */
+       z-index: -1;
+       opacity: 0.2;
+   }
+.medium-circle{
+    position: absolute;
+    top: 30%;
+    right:20%;
+    z-index: -1;
+    opacity: 0.4;
+}
+.small-circle{
+   
+       position: absolute;
+      bottom :0%;
+      left: 1%;
+       /* it put the image behind the text and other elements */
+       z-index: -1;
+       opacity: 0.7 
+}
+@keyframes drop{
+0%{
+    opacity: 0.3;
+    transform: translateY(-90px);
+    filter: drop-shadow(10px 8px 12px rgb(58, 110, 27));
+}
+ 100%{
+    opacity: 1;
+    transform: translateY(0px);
+    filter: drop-shadow(10px 8px 12px rgb(148, 23, 23));   
+ }
+
+}
+/* we give vh height to container
+then we give percentage height to child element inside  */
+/* to make it mobile friendly */
+@media screen and (max-width:1024px) {
+    .presentation{
+        flex-direction: column;
+       
+
+    }
+    .introduction{
+        margin-top: 5vh;
+          text-align: center;
+    }
+    .cover img{
+        height: 500px;
+    }
+
+}
